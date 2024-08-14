@@ -7,10 +7,15 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
+import { Cart, Home, Shop } from "./pages";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Root />}></Route>
+    <Route path="/" element={<Root />}>
+      <Route path="" element={<Home />} />
+      <Route path="" element={<Shop />} />
+      <Route path="" element={<Cart />} />
+    </Route>
   )
 );
 
