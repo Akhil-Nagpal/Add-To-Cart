@@ -7,20 +7,11 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import { Cart, Home, Shop } from "./pages";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<Root />}>
-      <Route path="" element={<Home />} />
-      <Route path="/shop" element={<Shop />} />
-      <Route path="/cart" element={<Cart />} />
-    </Route>
-  )
-);
+import router from "./router";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <RouterProvider router={router()} />
   </StrictMode>
 );
